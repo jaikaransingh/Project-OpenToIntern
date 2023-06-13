@@ -116,7 +116,7 @@ let collegeDetails = async (req, res) => {
   try{
     let query = req.query.collegeName;
     if(!isValid(query)){
-      return res.status(400).send({status: false,message:"Please provide Valid College name details"});
+      return res.status(404).send({status: false,message:"Please provide Valid College name details"});
     }
     if(!isValidString(query)){
       return res.status(400).send({status: false,message:"Please provide Valid College name details"});
