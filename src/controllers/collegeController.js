@@ -124,7 +124,7 @@ let collegeDetails = async (req, res) => {
 
     let getCollege = await collegeModel.findOne({ name: query });
     if (!getCollege) {
-      return res.status(400).send({ status: false, message: "No college exists with that name" });
+      return res.status(404).send({ status: false, message: "No college exists with that name" });
     }
 
     let id = getCollege._id;
